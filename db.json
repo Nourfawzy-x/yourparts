@@ -1,0 +1,6 @@
+{
+  "topics": [
+    { "id": 1, "title": "Topic 1", "description": "Description for topic 1" },
+    { "id": 2, "title": "Topic 2", "description": "Description for topic 2" }
+  ]
+}
