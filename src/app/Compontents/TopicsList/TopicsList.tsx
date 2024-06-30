@@ -1,4 +1,4 @@
-import { RiDeleteBinLine } from "react-icons/ri";
+import RemovedBtn from "../RemovedBtn/RemovedBtn";
 import { MdOutlineModeEdit } from "react-icons/md";
 import Link from "next/link";
 
@@ -11,12 +11,12 @@ const getTopics = async () => {
     return res.json();
   } catch (error) {
     console.log("error loading topics", error);
-    return []; // Return an empty array if there's an error
+    return [];
   }
 };
 
 export default async function TopicList() {
-  const topics = await getTopics(); // Directly assign the fetched topics
+  const topics = await getTopics();
 
   return (
     <>
@@ -37,10 +37,7 @@ export default async function TopicList() {
                   size={26}
                 />
               </Link>
-              <RiDeleteBinLine
-                className="text-red-600 cursor-pointer"
-                size={26}
-              />
+              <RemovedBtn id={t.id} />
             </div>
           </div>
         ))
