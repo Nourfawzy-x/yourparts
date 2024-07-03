@@ -1,10 +1,10 @@
 import Image from "next/image";
-import TopicsList from "./Compontents/TopicsList/TopicsList";
+import StudentList from "./Compontents/StudentsList/page";
 
 export default function Home() {
   return (
     <>
-      <TopicsList />
+      <StudentList />
     </>
   );
 }

@@ -13,11 +13,13 @@ const RemovedBtn: React.FC<RemovedBtnProps> = ({ id }) => {
   const router = useRouter();
 
   const removeTopic = async () => {
-    const res = await fetch(`http://localhost:3001/topics/${id}`, {
+    const res = await fetch(`http://localhost:3000/api/datas/?id=${id}`, {
       method: "DELETE",
+      cache: "no-store",
     });
     if (res.ok) {
       router.refresh();
+      console.log("deleted successfully");
       setShowModal(false);
     }
   };
@@ -74,7 +76,7 @@ const RemovedBtn: React.FC<RemovedBtnProps> = ({ id }) => {
                   />
                 </svg>
                 <h3 className="mb-5 text-lg font-normal text-gray-500 dark:text-gray-400">
-                  Are you sure you want to delete this topic?
+                  Are you sure you want to delete?
                 </h3>
                 <button
                   onClick={removeTopic}

@@ -1,4 +1,4 @@
-//import AddTopic from "@/app/Pages/AddTopic/page";
+import AddStudent from "@/app/Pages/AddStudent/page";
 import Link from "next/link";
 
 export default function Navbar() {
@@ -9,9 +9,9 @@ export default function Navbar() {
       </Link>
       <Link
         className="bg-emerald-500 font-medium text-white px-4 py-2 rounded-md"
-        href={"/AddTopic"}
+        href={"/AddStudent"}
       >
-        add topic
+        add student
       </Link>
     </nav>
   );
