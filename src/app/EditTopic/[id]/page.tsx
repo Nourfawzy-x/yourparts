@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import EditStudentDetails from "@/app/Compontents/EditStudentDetails/page";
-
+import { AiOutlineLoading3Quarters } from "react-icons/ai";
 interface Student {
   name: string;
   email: string;
@@ -53,7 +53,13 @@ const EditTopic: React.FC<EditStudentProps> = ({ params }) => {
   }, [id]);
 
   if (loading) {
-    return <p>Loading</p>;
+    return (
+      <>
+        <div className=" flex justify-center items-center my-5 w-full h-96">
+          <AiOutlineLoading3Quarters className="animate-spin text-3xl text-green-900" />
+        </div>
+      </>
+    );
   }
 
   if (error) {
