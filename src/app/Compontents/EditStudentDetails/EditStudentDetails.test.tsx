@@ -2,7 +2,7 @@
 import React from "react";
 import { render, screen, fireEvent } from "@testing-library/react";
 import { expect, test, vi } from "vitest";
-import EditTopicForm from "./page";
+import EditStudentDetails from "./page";
 import "@testing-library/jest-dom";
 
 vi.mock("next/navigation", () => ({
@@ -14,7 +14,7 @@ vi.mock("next/navigation", () => ({
 
 test("renders EditTopicForm with initial values", () => {
   render(
-    <EditTopicForm
+    <EditStudentDetails
       _id="1"
       name="ahmed"
       email="ahmed@example.com"
@@ -31,7 +31,7 @@ test("renders EditTopicForm with initial values", () => {
 
 test("handles form submission", async () => {
   render(
-    <EditTopicForm
+    <EditStudentDetails
       _id="1"
       name="ahmed"
       email="ahmed@example.com"

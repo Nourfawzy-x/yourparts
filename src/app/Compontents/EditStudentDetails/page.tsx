@@ -3,14 +3,14 @@
 import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 
-interface EditTopicFormProps {
+interface EditStudentDetailsProps {
   _id: string;
   name: string;
   email: string;
   phone: string;
 }
 
-const EditTopicForm: React.FC<EditTopicFormProps> = ({
+const EditStudentDetails: React.FC<EditStudentDetailsProps> = ({
   _id,
   name,
   email,
@@ -38,9 +38,9 @@ const EditTopicForm: React.FC<EditTopicFormProps> = ({
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          name: newName,
-          email: newEmail,
-          phone: newPhone,
+          newName,
+          newEmail,
+          newPhone,
         }),
       });
 
@@ -50,6 +50,7 @@ const EditTopicForm: React.FC<EditTopicFormProps> = ({
       }
 
       setSuccessMessage("Student updated successfully.");
+      console.log(res);
       router.refresh();
       router.push("/");
     } catch (error) {
@@ -133,4 +134,4 @@ const EditTopicForm: React.FC<EditTopicFormProps> = ({
   );
 };
 
-export default EditTopicForm;
+export default EditStudentDetails;
